@@ -37,9 +37,6 @@ app.get("/", (req, res) => {
 //   // Ad esempio, puoi reindirizzare l'utente alla pagina dell'arena
 // });
 // Route per "arena.html"
-app.get("/arena", (req, res) => {
-  res.sendFile(`${path.resolve()}/public/arena/arena.html`);
-});
 
 let rooms = {};
 // Funzione per trovare una stanza disponibile o crearne una nuova
@@ -59,7 +56,6 @@ function findOrCreateRoom() {
   if (!availableRoom) {
     let newRoom = `room-1`;
     if (rooms.keys) {
-      console.log("momo", Object.keys(rooms));
       newRoom = `room-${Object.keys(rooms).length + 1}`;
     }
 
@@ -83,6 +79,7 @@ io.on("connection", (socket) => {
   // Trova o crea una stanza disponibile
   const roomId = findOrCreateRoom();
   socket.join(roomId);
+  console.log("room", roomId);
   // cot rooms = io.sockets.adapter.t
   // console.log("ciao", io.sockets.adapter.rooms.get(roomId));
   // socket.adapter.rooms.get(room).add(socket.id);`
@@ -101,21 +98,21 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("id ", roomId);
     console.log(rooms[roomId]);
-    const index = rooms[roomId].indexOf(socket.id);
-    if (index !== -1) {
-      // Rimuovi il giocatore dalla stanza
-      rooms[roomId].splice(index, 1);
-      // Se la stanza è ora vuota, elimina la stanza
-      if (rooms[roomId].length === 0) {
-        delete rooms[roomId];
-      } else {
-        // Se c'è ancora un giocatore nella stanza, avvisa l'altro giocatore della disconnessione
-        const remainingPlayerId = rooms[roomId][0];
-        socket
-          .to(remainingPlayerId)
-          .emit(`opponentDisconnected${remainingPlayerId}`);
-      }
-    }
+    // const index = rooms[roomId].indexOf(socket.id);
+    // if (index !== -1) {
+    //   // Rimuovi il giocatore dalla stanza
+    //   rooms[roomId].splice(index, 1);
+    //   // Se la stanza è ora vuota, elimina la stanza
+    //   if (rooms[roomId].length === 0) {
+    //     delete rooms[roomId];
+    //   } else {
+    //     // Se c'è ancora un giocatore nella stanza, avvisa l'altro giocatore della disconnessione
+    //     const remainingPlayerId = rooms[roomId][0];
+    //     socket
+    //       .to(remainingPlayerId)
+    //       .emit(`opponentDisconnected${remainingPlayerId}`);
+    //   }
+    // }
   });
   // });
 });
