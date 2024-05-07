@@ -1,4 +1,4 @@
-const socket = io("/arena");
+const socket = io("/");
 
 const text = document.querySelector("#viewText");
 
@@ -13,13 +13,14 @@ socket.on("join-room", (r, id) => {
   console.log(`socket ${id} has joined room ${r}`);
   room = r;
 });
+
 // Ascolta l'evento per sapere se sei in attesa
 socket.on("waiting", () => {
   text.textContent = "Sei in attesa di un altro giocatore...";
   console.log("Sei in attesa di un altro giocatore...");
 });
 
-socket.on("opponentDisconnected", () => {
+socket.on("opponentDisconnected:id", () => {
   text.textContent = "hai vinto per abbandono";
   setTimeout(() => {
     window.location.href = "/";
