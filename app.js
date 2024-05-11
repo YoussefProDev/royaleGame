@@ -67,15 +67,17 @@ io.on("connection", (socket) => {
 
     if (roomId !== false) {
       const room = rooms.filter((ele) => (ele.id === roomId ? true : false))[0];
-      // console.log("ffedfew", indexRoom, rooms[indexRoom]);
       let playersRoom = room.players;
       players = playersRoom;
-      console.log(socket.data.username);
-      playersRoom.push(socket.data.username);
+      playersRoom.push({ id: socket.id, username: socket.data.username });
     } else {
       roomId = uuidv4();
-      rooms.push({ id: roomId, players: [socket.data.username] });
-      players.push(socket.data.username);
+      players = [{ id: socket.id, username: socket.data.username }];
+      rooms.push({
+        id: roomId,
+        players: players,
+      });
+
       // console.log("ciao");
     }
     console.log("ciao io entro in", roomId);
@@ -83,8 +85,20 @@ io.on("connection", (socket) => {
     if (io.of("/").adapter.rooms.get(roomId).size > 1) {
       io.of("/").to(roomId).emit("startGame", players);
     }
-    socket.on("attack", (attack) => {
-      io.of("/").to(roomId).except(socket.id).emit("recivedAttack", attack);
+
+    socket.on("perso", () => {
+      let opponent = players.filter((ele) => {
+        return ele.id != socket.id;
+      });
+      opponent = opponent[0];
+
+      io.of("/").to(opponent.id).emit("vinto");
+    });
+    socket.on("attack", (attack, life, danno) => {
+      io.of("/")
+        .to(roomId)
+        .except(socket.id)
+        .emit("recivedAttack", attack, life, danno);
     });
 
     // Gestisci la disconnessione del giocatore

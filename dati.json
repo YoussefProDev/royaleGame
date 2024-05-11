@@ -1,0 +1,499 @@
+{
+  "personaggi": [
+    {
+      "id": "Aerith1",
+      "nome": "Aerithia, Custode dei Venti",
+      "immagine": "aerithia.png",
+      "vita": 130,
+      "abilità": [
+        {
+          "azione": "Tempesta di Lame",
+          "danno": 18,
+          "tempo_ripetizione": 3000
+        },
+        {
+          "azione": "Scudo degli Elementi",
+          "danno": 0,
+          "tempo_ripetizione": 5000
+        },
+        {
+          "azione": "Fendente Celeste",
+          "danno": 25,
+          "tempo_ripetizione": 4000
+        },
+        {
+          "azione": "Vortice Avvolgente",
+          "danno": 0.5,
+          "tempo_ripetizione": 5500
+        },
+        {
+          "azione": "Rugiada dell'Alba",
+          "danno": 0.25,
+          "tempo_ripetizione": 3500
+        }
+      ]
+    },
+    {
+      "id": "Draco7",
+      "nome": "Draco, Guardiano dei Cieli",
+      "immagine": "draco.png",
+      "vita": 140,
+      "abilità": [
+        {
+          "azione": "Soffio Infuocato",
+          "danno": 22,
+          "tempo_ripetizione": 3500
+        },
+        {
+          "azione": "Artiglio Sferzante",
+          "danno": 20,
+          "tempo_ripetizione": 3000
+        },
+        {
+          "azione": "Scaglie Difensive",
+          "danno": 0,
+          "tempo_ripetizione": 5000
+        },
+        {
+          "azione": "Assalto Tellurico",
+          "danno": 0.5,
+          "tempo_ripetizione": 4500
+        },
+        {
+          "azione": "Furore Draconico",
+          "danno": 0.25,
+          "tempo_ripetizione": 4000
+        }
+      ]
+    },
+    {
+      "id": "Elena4",
+      "nome": "Elena, Danzatrice delle Ombre",
+      "immagine": "elena.png",
+      "vita": 125,
+      "abilità": [
+        {
+          "azione": "Affondo Velato",
+          "danno": 20,
+          "tempo_ripetizione": 4000
+        },
+        {
+          "azione": "Raffica d'Ombra",
+          "danno": 23,
+          "tempo_ripetizione": 4500
+        },
+        {
+          "azione": "Evasione Inafferrabile",
+          "danno": 0,
+          "tempo_ripetizione": 5000
+        },
+        {
+          "azione": "Furia Scura",
+          "danno": 0.4,
+          "tempo_ripetizione": 5500
+        },
+        {
+          "azione": "Velo Tenebroso",
+          "danno": 0.2,
+          "tempo_ripetizione": 6000
+        }
+      ]
+    },
+    {
+      "id": "Gaius3",
+      "nome": "Gaius, Maestro della Spada",
+      "immagine": "gaius.png",
+      "vita": 135,
+      "abilità": [
+        {
+          "azione": "Affondo Mortale",
+          "danno": 23,
+          "tempo_ripetizione": 4200
+        },
+        {
+          "azione": "Contrattacco",
+          "danno": 0,
+          "tempo_ripetizione": 4800
+        },
+        {
+          "azione": "Esplosione Furiosa",
+          "danno": 28,
+          "tempo_ripetizione": 5200
+        },
+        {
+          "azione": "Furia dell'Assassino",
+          "danno": 0.4,
+          "tempo_ripetizione": 5500
+        },
+        {
+          "azione": "Riflesso Letale",
+          "danno": 0.2,
+          "tempo_ripetizione": 5800
+        }
+      ]
+    },
+    {
+      "id": "Zephyr9",
+      "nome": "Zephyrus, Signore dei Venti",
+      "immagine": "zephyrus.png",
+      "vita": 120,
+      "abilità": [
+        {
+          "azione": "Furia degli Elementi",
+          "danno": 20,
+          "tempo_ripetizione": 3800
+        },
+        {
+          "azione": "Giratempo",
+          "danno": 0,
+          "tempo_ripetizione": 4600
+        },
+        {
+          "azione": "Raffica Eolica",
+          "danno": 24,
+          "tempo_ripetizione": 4200
+        },
+        {
+          "azione": "Tornado Scatenato",
+          "danno": 0.6,
+          "tempo_ripetizione": 5500
+        },
+        {
+          "azione": "Tempesta di Fulmini",
+          "danno": 0.3,
+          "tempo_ripetizione": 5000
+        }
+      ]
+    },
+    {
+      "id": "Zephyr1",
+      "nome": "Zephyra, Protettrice dei Venti",
+      "immagine": "zephyra.png",
+      "vita": 125,
+      "abilità": [
+        {
+          "azione": "Freccia Velata",
+          "danno": 22,
+          "tempo_ripetizione": 4100
+        },
+        {
+          "azione": "Soffio Celeste",
+          "danno": 0,
+          "tempo_ripetizione": 4800
+        },
+        {
+          "azione": "Danza delle Nuvole",
+          "danno": 26,
+          "tempo_ripetizione": 4300
+        },
+        {
+          "azione": "Turbinio Avvolgente",
+          "danno": 0.7,
+          "tempo_ripetizione": 5600
+        },
+        {
+          "azione": "Risacca dell'Arcobaleno",
+          "danno": 0.35,
+          "tempo_ripetizione": 5100
+        }
+      ]
+    },
+    {
+      "id": "Aurora6",
+      "nome": "Aurora, Signora dell'Alba",
+      "immagine": "aurora.png",
+      "vita": 135,
+      "abilità": [
+        {
+          "azione": "Raggio Lucente",
+          "danno": 24,
+          "tempo_ripetizione": 4400
+        },
+        {
+          "azione": "Scudo Radioso",
+          "danno": 0,
+          "tempo_ripetizione": 4700
+        },
+        {
+          "azione": "Esplosione Solare",
+          "danno": 30,
+          "tempo_ripetizione": 4300
+        },
+        {
+          "azione": "Eclissi Oscura",
+          "danno": 0.8,
+          "tempo_ripetizione": 5700
+        },
+        {
+          "azione": "Fiamma dell'Aurora",
+          "danno": 0.4,
+          "tempo_ripetizione": 5200
+        }
+      ]
+    },
+    {
+      "id": "Orion4",
+      "nome": "Orion, Cacciatore delle Stelle",
+      "immagine": "orion.png",
+      "vita": 130,
+      "abilità": [
+        {
+          "azione": "Freccia Stellare",
+          "danno": 21,
+          "tempo_ripetizione": 4000
+        },
+        {
+          "azione": "Scudo Celeste",
+          "danno": 0,
+          "tempo_ripetizione": 4900
+        },
+        {
+          "azione": "Esplosione Stellare",
+          "danno": 26,
+          "tempo_ripetizione": 4200
+        },
+        {
+          "azione": "Raggio Nebulare",
+          "danno": 0.6,
+          "tempo_ripetizione": 5500
+        },
+        {
+          "azione": "Supernova",
+          "danno": 0.3,
+          "tempo_ripetizione": 5100
+        }
+      ]
+    },
+    {
+      "id": "Athena8",
+      "nome": "Athena, Protettrice di Atena",
+      "immagine": "athena.png",
+      "vita": 140,
+      "abilità": [
+        {
+          "azione": "Scudo Divino",
+          "danno": 0,
+          "tempo_ripetizione": 4800
+        },
+        {
+          "azione": "Lancia Sacra",
+          "danno": 23,
+          "tempo_ripetizione": 4200
+        },
+        {
+          "azione": "Raffica Benedetta",
+          "danno": 28,
+          "tempo_ripetizione": 4400
+        },
+        {
+          "azione": "Furia Celestiale",
+          "danno": 0.7,
+          "tempo_ripetizione": 5600
+        },
+        {
+          "azione": "Giudizio Divino",
+          "danno": 0.35,
+          "tempo_ripetizione": 5200
+        }
+      ]
+    },
+    {
+      "id": "Apollo3",
+      "nome": "Apollo, Signore del Sole",
+      "immagine": "apollo.png",
+      "vita": 135,
+      "abilità": [
+        {
+          "azione": "Raggio Solare",
+          "danno": 22,
+          "tempo_ripetizione": 4300
+        },
+        {
+          "azione": "Scudo Solare",
+          "danno": 0,
+          "tempo_ripetizione": 4900
+        },
+        {
+          "azione": "Esplosione Solare",
+          "danno": 28,
+          "tempo_ripetizione": 4400
+        },
+        {
+          "azione": "Furia Solare",
+          "danno": 0.7,
+          "tempo_ripetizione": 5700
+        },
+        {
+          "azione": "Bagliore dell'Alba",
+          "danno": 0.35,
+          "tempo_ripetizione": 5200
+        }
+      ]
+    },
+    {
+      "id": "Luna2",
+      "nome": "Luna, Custode della Notte",
+      "immagine": "luna.png",
+      "vita": 130,
+      "abilità": [
+        {
+          "azione": "Fascino Lunare",
+          "danno": 20,
+          "tempo_ripetizione": 4100
+        },
+        {
+          "azione": "Scudo Lunare",
+          "danno": 0,
+          "tempo_ripetizione": 4700
+        },
+        {
+          "azione": "Raggio Lunare",
+          "danno": 26,
+          "tempo_ripetizione": 4200
+        },
+        {
+          "azione": "Furia Notturna",
+          "danno": 0.6,
+          "tempo_ripetizione": 5500
+        },
+        {
+          "azione": "Bagliore della Luna",
+          "danno": 0.3,
+          "tempo_ripetizione": 5000
+        }
+      ]
+    },
+    {
+      "id": "Stella9",
+      "nome": "Stella, Illuminatrice del Cielo",
+      "immagine": "stella.png",
+      "vita": 135,
+      "abilità": [
+        {
+          "azione": "Fulmine Stellare",
+          "danno": 23,
+          "tempo_ripetizione": 4200
+        },
+        {
+          "azione": "Scudo Stellare",
+          "danno": 0,
+          "tempo_ripetizione": 4900
+        },
+        {
+          "azione": "Raggio Stellare",
+          "danno": 28,
+          "tempo_ripetizione": 4400
+        },
+        {
+          "azione": "Furia Stellare",
+          "danno": 0.7,
+          "tempo_ripetizione": 5700
+        },
+        {
+          "azione": "Bagliore Stellare",
+          "danno": 0.35,
+          "tempo_ripetizione": 5200
+        }
+      ]
+    },
+    {
+      "id": "Erebus8",
+      "nome": "Erebus, Signore dell'Ombra",
+      "immagine": "erebus.png",
+      "vita": 140,
+      "abilità": [
+        {
+          "azione": "Abbraccio dell'Ombra",
+          "danno": 22,
+          "tempo_ripetizione": 4300
+        },
+        {
+          "azione": "Scudo Oscuro",
+          "danno": 0,
+          "tempo_ripetizione": 4800
+        },
+        {
+          "azione": "Onda Oscura",
+          "danno": 27,
+          "tempo_ripetizione": 4500
+        },
+        {
+          "azione": "Furia dell'Ombra",
+          "danno": 0.6,
+          "tempo_ripetizione": 5800
+        },
+        {
+          "azione": "Bagliore dell'Oscurità",
+          "danno": 0.3,
+          "tempo_ripetizione": 5300
+        }
+      ]
+    },
+    {
+      "id": "Athena7",
+      "nome": "Athena, Protettrice della Sapienza",
+      "immagine": "athena2.png",
+      "vita": 135,
+      "abilità": [
+        {
+          "azione": "Scudo dell'Athena",
+          "danno": 0,
+          "tempo_ripetizione": 4700
+        },
+        {
+          "azione": "Lancia dell'Athena",
+          "danno": 23,
+          "tempo_ripetizione": 4200
+        },
+        {
+          "azione": "Furia dell'Athena",
+          "danno": 28,
+          "tempo_ripetizione": 4400
+        },
+        {
+          "azione": "Giudizio dell'Athena",
+          "danno": 0.7,
+          "tempo_ripetizione": 5700
+        },
+        {
+          "azione": "Bagliore dell'Athena",
+          "danno": 0.35,
+          "tempo_ripetizione": 5200
+        }
+      ]
+    },
+    {
+      "id": "Apollo5",
+      "nome": "Apollo, Signore della Musica",
+      "immagine": "apollo2.png",
+      "vita": 140,
+      "abilità": [
+        {
+          "azione": "Arpa Divina",
+          "danno": 24,
+          "tempo_ripetizione": 4400
+        },
+        {
+          "azione": "Scudo della Musica",
+          "danno": 0,
+          "tempo_ripetizione": 4900
+        },
+        {
+          "azione": "Canto Celestiale",
+          "danno": 29,
+          "tempo_ripetizione": 4500
+        },
+        {
+          "azione": "Furia della Musica",
+          "danno": 0.7,
+          "tempo_ripetizione": 5800
+        },
+        {
+          "azione": "Bagliore della Musica",
+          "danno": 0.35,
+          "tempo_ripetizione": 5300
+        }
+      ]
+    }
+  ]
+}

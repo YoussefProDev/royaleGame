@@ -61,15 +61,24 @@ const opponentName = document.getElementById("opponentName");
 const myName = document.getElementById("myName");
 socket.on("startGame", (players) => {
   players.forEach((player) => {
-    if (player != username) {
-      opponentName.textContent = player;
+    if (player.id != socket.id) {
+      opponentName.textContent = player.username;
     }
   });
   myName.textContent = username;
   document.querySelector("#attesa").classList.add("d-none");
   document.querySelector("#step3").classList.remove("d-none");
 });
+socket.on("vinto", () => {
+  console.log("Win");
+  document.querySelector("#fineText").textContent = "Hai Vinto";
+  document.querySelector("#step3").classList.add("d-none");
+  document.querySelector("#fine").classList.remove("d-none");
 
+  setTimeout(() => {
+    location.reload();
+  }, 3000);
+});
 socket.on("opponentDisconnect", () => {
   console.log("opponent disconnected");
   document.querySelector("#step3").classList.add("d-none");
@@ -78,25 +87,74 @@ socket.on("opponentDisconnect", () => {
     location.reload();
   }, 5000);
 });
-
-socket.on("recivedAttack", (attacco) => {
-  document.querySelector("#attacco").textContent = attacco;
+const myLife = document.querySelector("#myBar");
+const opponentLife = document.querySelector("#opponentBar");
+socket.on("recivedAttack", (attacco, life, danno) => {
+  document.querySelector(
+    "#attacco"
+  ).textContent = `l'avversario ti ha colpito ${attacco}`;
+  myLife.style.width = `${parseInt(myLife.style.width) - +danno}%`;
+  myLife.textContent = `${parseInt(myLife.textContent) - +danno}%`;
+  opponentLife.style.width = `${life}%`;
+  opponentLife.textContent = `${life}%`;
+  if (parseInt(myLife.textContent) < 5) {
+    document.querySelector("#fineText").textContent = `Hai Perso`;
+    document.querySelector("#step3").classList.add("d-none");
+    document.querySelector("#fine").classList.remove("d-none");
+    socket.emit("perso");
+    setTimeout(() => {
+      location.reload();
+    }, 3000);
+  }
 });
 
 // document.querySelector("info").ad
 const buttons = document.querySelectorAll("#actions button");
 buttons.forEach((butt) => {
   butt.addEventListener("click", (event) => {
-    buttons.forEach((b) => {
-      b.disabled = true;
-    });
+    let danno = event.target.dataset.danno;
+    // console.log("danno", danno);
+    switch (event.target.id) {
+      case "pugno":
+        event.target.disabled = true;
+        setTimeout(() => {
+          event.target.disabled = false;
+        }, 1300);
+        break;
+      case "calcio":
+        event.target.disabled = true;
+        setTimeout(() => {
+          event.target.disabled = false;
+        }, 2500);
+        break;
+      case "schiva":
+        myLife.style.width = `${parseInt(myLife.style.width) + 2}%`;
+        myLife.textContent = `${parseInt(myLife.textContent) + 2}%`;
+        danno = "0";
+        event.target.disabled = true;
+        setTimeout(() => {
+          event.target.disabled = false;
+        }, 500);
+        break;
+
+      case "para":
+        danno = "0";
+        // SelectedEnemy.hp -= SelectedCharacter.power;
+        event.target.disabled = true;
+        setTimeout(() => {
+          event.target.disabled = false;
+        }, 500);
+        break;
+    }
+
     // document.querySelector("#attacco").textContent = event.target.id;
-    socket.emit("attack", event.target.id);
-    setTimeout(() => {
-      buttons.forEach((b) => {
-        b.disabled = false;
-      });
-    }, 3000);
+    socket.emit("attack", event.target.id, parseInt(myLife.style.width), danno);
+    opponentLife.style.width = `${
+      parseInt(opponentLife.style.width) - +danno
+    }%`;
+    opponentLife.textContent = `${
+      parseInt(opponentLife.textContent) - +danno
+    }%`;
   });
 });
 
