@@ -61,3 +61,16 @@ header {
   border-radius: 12px;
   width: 200px;
 }
+
+.timeAnimation {
+  animation: time var(--time) linear 1;
+}
+
+@keyframes time {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}

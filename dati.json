@@ -1,497 +1,392 @@
 {
   "personaggi": [
     {
-      "id": "Aerith1",
-      "nome": "Aerithia, Custode dei Venti",
-      "immagine": "aerithia.png",
-      "vita": 130,
-      "abilità": [
-        {
-          "azione": "Tempesta di Lame",
-          "danno": 18,
-          "tempo_ripetizione": 3000
-        },
-        {
-          "azione": "Scudo degli Elementi",
-          "danno": 0,
-          "tempo_ripetizione": 5000
-        },
-        {
-          "azione": "Fendente Celeste",
-          "danno": 25,
-          "tempo_ripetizione": 4000
-        },
-        {
-          "azione": "Vortice Avvolgente",
-          "danno": 0.5,
-          "tempo_ripetizione": 5500
-        },
-        {
-          "azione": "Rugiada dell'Alba",
-          "danno": 0.25,
-          "tempo_ripetizione": 3500
-        }
-      ]
-    },
-    {
-      "id": "Draco7",
-      "nome": "Draco, Guardiano dei Cieli",
-      "immagine": "draco.png",
-      "vita": 140,
-      "abilità": [
-        {
-          "azione": "Soffio Infuocato",
-          "danno": 22,
-          "tempo_ripetizione": 3500
-        },
-        {
-          "azione": "Artiglio Sferzante",
-          "danno": 20,
-          "tempo_ripetizione": 3000
-        },
-        {
-          "azione": "Scaglie Difensive",
-          "danno": 0,
-          "tempo_ripetizione": 5000
-        },
-        {
-          "azione": "Assalto Tellurico",
-          "danno": 0.5,
-          "tempo_ripetizione": 4500
-        },
-        {
-          "azione": "Furore Draconico",
-          "danno": 0.25,
-          "tempo_ripetizione": 4000
-        }
-      ]
-    },
-    {
-      "id": "Elena4",
-      "nome": "Elena, Danzatrice delle Ombre",
-      "immagine": "elena.png",
-      "vita": 125,
-      "abilità": [
-        {
-          "azione": "Affondo Velato",
-          "danno": 20,
-          "tempo_ripetizione": 4000
-        },
-        {
-          "azione": "Raffica d'Ombra",
-          "danno": 23,
-          "tempo_ripetizione": 4500
-        },
-        {
-          "azione": "Evasione Inafferrabile",
-          "danno": 0,
-          "tempo_ripetizione": 5000
-        },
-        {
-          "azione": "Furia Scura",
-          "danno": 0.4,
-          "tempo_ripetizione": 5500
-        },
-        {
-          "azione": "Velo Tenebroso",
-          "danno": 0.2,
-          "tempo_ripetizione": 6000
-        }
-      ]
-    },
-    {
-      "id": "Gaius3",
-      "nome": "Gaius, Maestro della Spada",
-      "immagine": "gaius.png",
-      "vita": 135,
-      "abilità": [
-        {
-          "azione": "Affondo Mortale",
-          "danno": 23,
-          "tempo_ripetizione": 4200
-        },
-        {
-          "azione": "Contrattacco",
-          "danno": 0,
-          "tempo_ripetizione": 4800
-        },
-        {
-          "azione": "Esplosione Furiosa",
-          "danno": 28,
-          "tempo_ripetizione": 5200
-        },
-        {
-          "azione": "Furia dell'Assassino",
-          "danno": 0.4,
-          "tempo_ripetizione": 5500
-        },
-        {
-          "azione": "Riflesso Letale",
-          "danno": 0.2,
-          "tempo_ripetizione": 5800
-        }
-      ]
-    },
-    {
-      "id": "Zephyr9",
-      "nome": "Zephyrus, Signore dei Venti",
-      "immagine": "zephyrus.png",
-      "vita": 120,
-      "abilità": [
-        {
-          "azione": "Furia degli Elementi",
-          "danno": 20,
-          "tempo_ripetizione": 3800
-        },
-        {
-          "azione": "Giratempo",
-          "danno": 0,
-          "tempo_ripetizione": 4600
-        },
-        {
-          "azione": "Raffica Eolica",
-          "danno": 24,
-          "tempo_ripetizione": 4200
-        },
-        {
-          "azione": "Tornado Scatenato",
-          "danno": 0.6,
-          "tempo_ripetizione": 5500
-        },
-        {
-          "azione": "Tempesta di Fulmini",
-          "danno": 0.3,
-          "tempo_ripetizione": 5000
-        }
-      ]
-    },
-    {
-      "id": "Zephyr1",
-      "nome": "Zephyra, Protettrice dei Venti",
-      "immagine": "zephyra.png",
-      "vita": 125,
-      "abilità": [
-        {
-          "azione": "Freccia Velata",
-          "danno": 22,
-          "tempo_ripetizione": 4100
-        },
-        {
-          "azione": "Soffio Celeste",
-          "danno": 0,
-          "tempo_ripetizione": 4800
-        },
-        {
-          "azione": "Danza delle Nuvole",
-          "danno": 26,
-          "tempo_ripetizione": 4300
-        },
-        {
-          "azione": "Turbinio Avvolgente",
-          "danno": 0.7,
-          "tempo_ripetizione": 5600
-        },
-        {
-          "azione": "Risacca dell'Arcobaleno",
-          "danno": 0.35,
-          "tempo_ripetizione": 5100
-        }
-      ]
-    },
-    {
-      "id": "Aurora6",
-      "nome": "Aurora, Signora dell'Alba",
-      "immagine": "aurora.png",
-      "vita": 135,
-      "abilità": [
-        {
-          "azione": "Raggio Lucente",
-          "danno": 24,
-          "tempo_ripetizione": 4400
-        },
-        {
-          "azione": "Scudo Radioso",
-          "danno": 0,
-          "tempo_ripetizione": 4700
-        },
-        {
-          "azione": "Esplosione Solare",
-          "danno": 30,
-          "tempo_ripetizione": 4300
-        },
-        {
-          "azione": "Eclissi Oscura",
-          "danno": 0.8,
-          "tempo_ripetizione": 5700
-        },
-        {
-          "azione": "Fiamma dell'Aurora",
-          "danno": 0.4,
-          "tempo_ripetizione": 5200
-        }
-      ]
-    },
-    {
-      "id": "Orion4",
-      "nome": "Orion, Cacciatore delle Stelle",
-      "immagine": "orion.png",
-      "vita": 130,
-      "abilità": [
-        {
-          "azione": "Freccia Stellare",
-          "danno": 21,
-          "tempo_ripetizione": 4000
-        },
-        {
-          "azione": "Scudo Celeste",
-          "danno": 0,
-          "tempo_ripetizione": 4900
-        },
-        {
-          "azione": "Esplosione Stellare",
-          "danno": 26,
-          "tempo_ripetizione": 4200
-        },
-        {
-          "azione": "Raggio Nebulare",
-          "danno": 0.6,
-          "tempo_ripetizione": 5500
-        },
+      "id": "Aethra",
+      "nome": "Aethra, Signora delle Stelle",
+      "descrizione": "Aethra è una potente maga stellare che controlla le forze del cosmo. La sua presenza è come un'esplosione di luce tra le tenebre, e il suo potere può annientare gli avversari con supernove e astri cadenti. Con la sua abilita nel manipolare le stelle, Aethra può incenerire i suoi nemici e proteggere gli alleati con barriere stellari.",
+      "immagine": "aethra.png",
+      "vita": 100,
+      "abilita": [
         {
           "azione": "Supernova",
-          "danno": 0.3,
-          "tempo_ripetizione": 5100
-        }
-      ]
-    },
-    {
-      "id": "Athena8",
-      "nome": "Athena, Protettrice di Atena",
-      "immagine": "athena.png",
-      "vita": 140,
-      "abilità": [
+          "descrizione": "Scatena una supernova contro gli avversari, incenerendoli con la potenza del sole.",
+          "danno": 28,
+          "tempo_ripetizione": 4500
+        },
         {
-          "azione": "Scudo Divino",
+          "azione": "Barriera Stellare",
+          "descrizione": "Crea una barriera di stelle intorno a sé, proteggendo dagli attacchi nemici e ripristinando la salute.",
           "danno": 0,
           "tempo_ripetizione": 4800
         },
         {
-          "azione": "Lancia Sacra",
-          "danno": 23,
-          "tempo_ripetizione": 4200
-        },
-        {
-          "azione": "Raffica Benedetta",
-          "danno": 28,
-          "tempo_ripetizione": 4400
-        },
-        {
-          "azione": "Furia Celestiale",
-          "danno": 0.7,
-          "tempo_ripetizione": 5600
-        },
-        {
-          "azione": "Giudizio Divino",
-          "danno": 0.35,
-          "tempo_ripetizione": 5200
-        }
-      ]
-    },
-    {
-      "id": "Apollo3",
-      "nome": "Apollo, Signore del Sole",
-      "immagine": "apollo.png",
-      "vita": 135,
-      "abilità": [
-        {
-          "azione": "Raggio Solare",
-          "danno": 22,
+          "azione": "Astro Cadente",
+          "descrizione": "Lancia un astro cadente contro gli avversari, infliggendo danni e causando ustioni.",
+          "danno": 27,
           "tempo_ripetizione": 4300
-        },
-        {
-          "azione": "Scudo Solare",
-          "danno": 0,
-          "tempo_ripetizione": 4900
-        },
-        {
-          "azione": "Esplosione Solare",
-          "danno": 28,
-          "tempo_ripetizione": 4400
-        },
-        {
-          "azione": "Furia Solare",
-          "danno": 0.7,
-          "tempo_ripetizione": 5700
-        },
-        {
-          "azione": "Bagliore dell'Alba",
-          "danno": 0.35,
-          "tempo_ripetizione": 5200
-        }
-      ]
-    },
-    {
-      "id": "Luna2",
-      "nome": "Luna, Custode della Notte",
-      "immagine": "luna.png",
-      "vita": 130,
-      "abilità": [
-        {
-          "azione": "Fascino Lunare",
-          "danno": 20,
-          "tempo_ripetizione": 4100
-        },
-        {
-          "azione": "Scudo Lunare",
-          "danno": 0,
-          "tempo_ripetizione": 4700
-        },
-        {
-          "azione": "Raggio Lunare",
-          "danno": 26,
-          "tempo_ripetizione": 4200
-        },
-        {
-          "azione": "Furia Notturna",
-          "danno": 0.6,
-          "tempo_ripetizione": 5500
-        },
-        {
-          "azione": "Bagliore della Luna",
-          "danno": 0.3,
-          "tempo_ripetizione": 5000
-        }
-      ]
-    },
-    {
-      "id": "Stella9",
-      "nome": "Stella, Illuminatrice del Cielo",
-      "immagine": "stella.png",
-      "vita": 135,
-      "abilità": [
-        {
-          "azione": "Fulmine Stellare",
-          "danno": 23,
-          "tempo_ripetizione": 4200
-        },
-        {
-          "azione": "Scudo Stellare",
-          "danno": 0,
-          "tempo_ripetizione": 4900
-        },
-        {
-          "azione": "Raggio Stellare",
-          "danno": 28,
-          "tempo_ripetizione": 4400
         },
         {
           "azione": "Furia Stellare",
-          "danno": 0.7,
+          "descrizione": "Entra in uno stato di furia, aumentando la potenza dei suoi attacchi e infliggendo danni extra.",
+          "danno": 0.6,
           "tempo_ripetizione": 5700
         },
         {
-          "azione": "Bagliore Stellare",
-          "danno": 0.35,
-          "tempo_ripetizione": 5200
+          "azione": "Luce Celeste",
+          "descrizione": "Illumina il campo di battaglia con una luce celeste che confonde gli avversari e rallentandone i movimenti.",
+          "danno": 0,
+          "tempo_ripetizione": 4900
         }
       ]
     },
     {
-      "id": "Erebus8",
-      "nome": "Erebus, Signore dell'Ombra",
-      "immagine": "erebus.png",
-      "vita": 140,
-      "abilità": [
+      "id": "Brynhildr",
+      "nome": "Brynhildr, Valchiria del Nord",
+      "descrizione": "Brynhildr è una guerriera valorosa che cavalca i venti del nord e combatte per l'onore e la gloria. La sua presenza è come un uragano sulla pianura, e il suo potere può sconfiggere i nemici con una sola spada. Con la sua abilita nel combattimento, Brynhildr può fendere elmi e scudi e difendere gli alleati con il suo coraggio indomito.",
+      "immagine": "brynhildr.png",
+      "vita": 100,
+      "abilita": [
         {
-          "azione": "Abbraccio dell'Ombra",
-          "danno": 22,
-          "tempo_ripetizione": 4300
+          "azione": "Lama della Valchiria",
+          "descrizione": "Brandisce la sua lama con maestria, infliggendo danni multipli agli avversari circostanti.",
+          "danno": 28,
+          "tempo_ripetizione": 4500
         },
         {
-          "azione": "Scudo Oscuro",
+          "azione": "Scudo dell'Onore",
+          "descrizione": "Solleva lo scudo per bloccare i colpi in arrivo e proteggersi dai danni.",
           "danno": 0,
           "tempo_ripetizione": 4800
         },
         {
-          "azione": "Onda Oscura",
+          "azione": "Fendente Glaciale",
+          "descrizione": "Scaglia fendenti di ghiaccio contro gli avversari, infliggendo danni e causando rallentamenti.",
           "danno": 27,
-          "tempo_ripetizione": 4500
+          "tempo_ripetizione": 4300
         },
         {
-          "azione": "Furia dell'Ombra",
+          "azione": "Furia della Valchiria",
+          "descrizione": "Entra in uno stato di furia, aumentando la potenza dei suoi attacchi e infliggendo danni extra.",
           "danno": 0.6,
-          "tempo_ripetizione": 5800
+          "tempo_ripetizione": 5700
         },
         {
-          "azione": "Bagliore dell'Oscurità",
-          "danno": 0.3,
-          "tempo_ripetizione": 5300
+          "azione": "Vento Gelido",
+          "descrizione": "Scatena un vento gelido che congela il campo di battaglia, confondendo gli avversari e rallentandone i movimenti.",
+          "danno": 0,
+          "tempo_ripetizione": 4900
         }
       ]
     },
     {
-      "id": "Athena7",
-      "nome": "Athena, Protettrice della Sapienza",
-      "immagine": "athena2.png",
-      "vita": 135,
-      "abilità": [
+      "id": "Cinder",
+      "nome": "Cinder, Signora delle Fiamme",
+      "descrizione": "Cinder è una regina di fuoco che regna sovrana sui deserti ardenti e i vulcani fumanti. La sua presenza è come un incendio che divampa nella notte, e il suo potere può incenerire gli avversari con la sua folgore infernale. Con la sua abilita nel manipolare le fiamme, Cinder può trasformare il campo di battaglia in un inferno e bruciare i nemici con la sua furia ardente.",
+      "immagine": "cinder.png",
+      "vita": 100,
+      "abilita": [
         {
-          "azione": "Scudo dell'Athena",
+          "azione": "Folgore Infernale",
+          "descrizione": "Scatena una folgore infernale contro gli avversari, incenerendoli con la potenza del fuoco.",
+          "danno": 30,
+          "tempo_ripetizione": 4500
+        },
+        {
+          "azione": "Muro di Fiamme",
+          "descrizione": "Crea un muro di fiamme intorno a sé, proteggendo dagli attacchi nemici e danneggiando gli avversari che lo attraversano.",
           "danno": 0,
-          "tempo_ripetizione": 4700
+          "tempo_ripetizione": 4800
         },
         {
-          "azione": "Lancia dell'Athena",
-          "danno": 23,
-          "tempo_ripetizione": 4200
+          "azione": "Fiamme Avvolgenti",
+          "descrizione": "Avvolge gli avversari con fiamme avvolgenti, infliggendo danni e causando bruciature.",
+          "danno": 27,
+          "tempo_ripetizione": 4300
         },
         {
-          "azione": "Furia dell'Athena",
-          "danno": 28,
-          "tempo_ripetizione": 4400
-        },
-        {
-          "azione": "Giudizio dell'Athena",
-          "danno": 0.7,
+          "azione": "Furia del Fuoco",
+          "descrizione": "Entra in uno stato di furia, aumentando la potenza dei suoi attacchi e infliggendo danni extra.",
+          "danno": 0.6,
           "tempo_ripetizione": 5700
         },
         {
-          "azione": "Bagliore dell'Athena",
-          "danno": 0.35,
+          "azione": "Inferno Rovente",
+          "descrizione": "Scatena un inferno rovente che brucia gli avversari, infliggendo danni devastanti e riducendo la loro velocità.",
+          "danno": 0.7,
           "tempo_ripetizione": 5200
         }
       ]
     },
     {
-      "id": "Apollo5",
-      "nome": "Apollo, Signore della Musica",
-      "immagine": "apollo2.png",
-      "vita": 140,
-      "abilità": [
+      "id": "Dusk",
+      "nome": "Dusk, Signore delle Tenebre",
+      "descrizione": "Dusk è un essere oscuro che si muove nell'ombra e regna sovrano sui regni delle tenebre. La sua presenza è come l'oscurità che avvolge il mondo, e il suo potere può consumare gli avversari con il suo abisso oscuro. Con la sua abilita nel manipolare le tenebre, Dusk può oscurare il campo di battaglia e infliggere danni con la sua energia oscura.",
+      "immagine": "dusk.png",
+      "vita": 100,
+      "abilita": [
         {
-          "azione": "Arpa Divina",
-          "danno": 24,
-          "tempo_ripetizione": 4400
+          "azione": "Abisso Oscuro",
+          "descrizione": "Scatena un abisso oscuro contro gli avversari, consumandoli con la potenza delle tenebre.",
+          "danno": 30,
+          "tempo_ripetizione": 4500
         },
         {
-          "azione": "Scudo della Musica",
+          "azione": "Manto Oscuro",
+          "descrizione": "Avvolge se stesso con un manto oscuro, rendendosi invisibile agli occhi degli avversari e aumentando la sua difesa.",
+          "danno": 0,
+          "tempo_ripetizione": 4800
+        },
+        {
+          "azione": "Spada delle Tenebre",
+          "descrizione": "Scaglia una spada di energia oscura contro gli avversari, infliggendo danni e causando rallentamenti.",
+          "danno": 27,
+          "tempo_ripetizione": 4300
+        },
+        {
+          "azione": "Furia dell'Oscurità",
+          "descrizione": "Entra in uno stato di furia, aumentando la potenza dei suoi attacchi e infliggendo danni extra.",
+          "danno": 0.6,
+          "tempo_ripetizione": 5700
+        },
+        {
+          "azione": "Nottata Infuocata",
+          "descrizione": "Oscura il campo di battaglia e scatena un'esplosione di energia oscura, infliggendo danni devastanti e abbattendo le loro difese.",
+          "danno": 0.7,
+          "tempo_ripetizione": 5200
+        }
+      ]
+    },
+    {
+      "id": "Ethereal",
+      "nome": "Ethereal, Signore delle Nebbie",
+      "descrizione": "Ethereal è un'entità eterea che si muove tra le nebbie e controlla le forze del mistero. La sua presenza è come un'ombra tra le nuvole, e il suo potere può confondere gli avversari con illusioni e inganni. Con la sua abilita nel manipolare le nebbie, Ethereal può avvolgere il campo di battaglia in un'atmosfera sinistra e infliggere danni con le sue arti oscure.",
+      "immagine": "ethereal.png",
+      "vita": 100,
+      "abilita": [
+        {
+          "azione": "Illusione Nebbiosa",
+          "descrizione": "Creare illusioni nebbiose per confondere gli avversari e ridurre la loro precisione.",
+          "danno": 0,
+          "tempo_ripetizione": 4800
+        },
+        {
+          "azione": "Fascino Etereo",
+          "descrizione": "Scatena un fascino etereo che incanta gli avversari e li rende vulnerabili agli attacchi.",
+          "danno": 0,
+          "tempo_ripetizione": 5000
+        },
+        {
+          "azione": "Neblina Avvolgente",
+          "descrizione": "Avvolge il campo di battaglia in una nebbia fitta, confondendo gli avversari e rallentandone i movimenti.",
           "danno": 0,
           "tempo_ripetizione": 4900
         },
         {
-          "azione": "Canto Celestiale",
-          "danno": 29,
+          "azione": "Furia delle Nebbie",
+          "descrizione": "Entra in uno stato di furia, aumentando la potenza dei suoi attacchi e infliggendo danni extra.",
+          "danno": 0.6,
+          "tempo_ripetizione": 5700
+        },
+        {
+          "azione": "Nebbia Avvelenata",
+          "descrizione": "Scatena una nebbia avvelenata che danneggia gli avversari nel tempo e riduce la loro velocità.",
+          "danno": 0.5,
+          "tempo_ripetizione": 5200
+        }
+      ]
+    },
+    {
+      "id": "Frostbite",
+      "nome": "Frostbite, Re del Ghiaccio",
+      "descrizione": "Frostbite è un sovrano glaciale che governa sui regni dei ghiacci eterni e delle tempeste di neve. La sua presenza è come un freddo intenso che taglia fino alle ossa, e il suo potere può congelare gli avversari con il suo alito gelido. Con la sua abilita nel manipolare il ghiaccio, Frostbite può trasformare il campo di battaglia in un deserto di ghiaccio e ridurre in frantumi i nemici con la sua furia artica.",
+      "immagine": "frostbite.png",
+      "vita": 100,
+      "abilita": [
+        {
+          "azione": "Alito Glaciale",
+          "descrizione": "Scatena un alito glaciale che congela gli avversari, infliggendo danni e causando rallentamenti.",
+          "danno": 30,
           "tempo_ripetizione": 4500
         },
         {
-          "azione": "Furia della Musica",
-          "danno": 0.7,
-          "tempo_ripetizione": 5800
+          "azione": "Muro di Ghiaccio",
+          "descrizione": "Crea un muro di ghiaccio intorno a sé, proteggendo dagli attacchi nemici e danneggiando gli avversari che lo attraversano.",
+          "danno": 0,
+          "tempo_ripetizione": 4800
         },
         {
-          "azione": "Bagliore della Musica",
-          "danno": 0.35,
-          "tempo_ripetizione": 5300
+          "azione": "Freccia Gelida",
+          "descrizione": "Scaglia freccie di ghiaccio contro gli avversari, infliggendo danni e causando congelamento.",
+          "danno": 27,
+          "tempo_ripetizione": 4300
+        },
+        {
+          "azione": "Furia Artica",
+          "descrizione": "Entra in uno stato di furia, aumentando la potenza dei suoi attacchi e infliggendo danni extra.",
+          "danno": 0.6,
+          "tempo_ripetizione": 5700
+        },
+        {
+          "azione": "Tempesta di Neve",
+          "descrizione": "Scatena una tempesta di neve che rallenta gli avversari e riduce la loro precisione.",
+          "danno": 0,
+          "tempo_ripetizione": 4900
+        }
+      ]
+    },
+    {
+      "id": "Geist",
+      "nome": "Geist, Spettro dell'Oscurità",
+      "descrizione": "Geist è uno spettro oscuro che si aggira tra le ombre e infesta le menti dei viventi. La sua presenza è come un brivido lungo la schiena, e il suo potere può terrorizzare gli avversari con illusioni spaventose. Con la sua abilita nel manipolare le ombre, Geist può tormentare i suoi nemici con visioni orribili e consumare le loro anime con la sua fame eterna.",
+      "immagine": "geist.png",
+      "vita": 100,
+      "abilita": [
+        {
+          "azione": "Visione dell'Orrore",
+          "descrizione": "Infesta la mente degli avversari con visioni spaventose, causando confusione e riducendo la loro precisione.",
+          "danno": 0,
+          "tempo_ripetizione": 4800
+        },
+        {
+          "azione": "Spettro Incantato",
+          "descrizione": "Manifesta uno spettro oscuro che attacca gli avversari e li rallenta con il suo tocco ghiacciato.",
+          "danno": 27,
+          "tempo_ripetizione": 4300
+        },
+        {
+          "azione": "Oscurità Avvolgente",
+          "descrizione": "Avvolge il campo di battaglia nell'oscurità, confondendo gli avversari e riducendo la loro velocità.",
+          "danno": 0,
+          "tempo_ripetizione": 4900
+        },
+        {
+          "azione": "Furia dello Spettro",
+          "descrizione": "Entra in uno stato di furia, aumentando la potenza dei suoi attacchi e infliggendo danni extra.",
+          "danno": 0.6,
+          "tempo_ripetizione": 5700
+        },
+        {
+          "azione": "Mente Oscura",
+          "descrizione": "Confonde gli avversari con visioni oscure, causando panico e riducendo la loro precisione.",
+          "danno": 0,
+          "tempo_ripetizione": 5100
+        }
+      ]
+    },
+    {
+      "id": "Harmony",
+      "nome": "Harmony, Custode dell'Equilibrio",
+      "descrizione": "Harmony è una custode dell'equilibrio che protegge il mondo dagli estremi e dalle discordie. La sua presenza è come una calma serena nel bel mezzo della tempesta, e il suo potere può ristabilire l'armonia con un solo gesto. Con la sua abilita nel mantenere l'equilibrio, Harmony può guarire le ferite e lenire gli animi con la sua melodia pacifica.",
+      "immagine": "harmony.png",
+      "vita": 100,
+      "abilita": [
+        {
+          "azione": "Armonia Curativa",
+          "descrizione": "Emette una melodia pacifica che guarisce gli alleati e ripristina la loro vitalità.",
+          "danno": 0,
+          "tempo_ripetizione": 4800
+        },
+        {
+          "azione": "Benedizione Equilibrata",
+          "descrizione": "Concede una benedizione equilibrata agli alleati, aumentando la loro difesa e ripristinando la loro salute nel tempo.",
+          "danno": 0,
+          "tempo_ripetizione": 5000
+        },
+        {
+          "azione": "Melodia Curativa",
+          "descrizione": "Emana una melodia rasserenante che guarisce gli alleati e li protegge dagli attacchi nemici.",
+          "danno": 0,
+          "tempo_ripetizione": 4900
+        },
+        {
+          "azione": "Furia Equilibrata",
+          "descrizione": "Entra in uno stato di equilibrio, aumentando la potenza dei suoi attacchi e ripristinando la salute degli alleati.",
+          "danno": 0.6,
+          "tempo_ripetizione": 5700
+        },
+        {
+          "azione": "Canto dell'Equilibrio",
+          "descrizione": "Canta un canto armonico che ristabilisce l'equilibrio nel campo di battaglia, riducendo i danni subiti dagli alleati e infliggendo danni agli avversari.",
+          "danno": 0.5,
+          "tempo_ripetizione": 5200
+        }
+      ]
+    },
+    {
+      "id": "Ignis",
+      "nome": "Ignis, Signore del Fuoco",
+      "descrizione": "Ignis è un signore del fuoco che regna sovrano sui vulcani infuocati e le terre desertiche. La sua presenza è come una fiamma che divampa nel buio, e il suo potere può consumare gli avversari con il suo abbraccio ardente. Con la sua abilita nel manipolare il fuoco, Ignis può trasformare il campo di battaglia in un inferno ardente e ridurre in cenere i nemici con la sua furia infuocata.",
+      "immagine": "ignis.png",
+      "vita": 100,
+      "abilita": [
+        {
+          "azione": "Abbraccio Ardente",
+          "descrizione": "Scatena un abbraccio ardente che incendia gli avversari, infliggendo danni e causando bruciature.",
+          "danno": 30,
+          "tempo_ripetizione": 4500
+        },
+        {
+          "azione": "Muro di Fiamme",
+          "descrizione": "Crea un muro di fiamme intorno a sé, proteggendo dagli attacchi nemici e danneggiando gli avversari che lo attraversano.",
+          "danno": 0,
+          "tempo_ripetizione": 4800
+        },
+        {
+          "azione": "Pugno Infuocato",
+          "descrizione": "Scaglia un pugno infuocato contro gli avversari, infliggendo danni e causando ustioni.",
+          "danno": 27,
+          "tempo_ripetizione": 4300
+        },
+        {
+          "azione": "Furia del Fuoco",
+          "descrizione": "Entra in uno stato di furia, aumentando la potenza dei suoi attacchi e infliggendo danni extra.",
+          "danno": 0.6,
+          "tempo_ripetizione": 5700
+        },
+        {
+          "azione": "Inferno Rovente",
+          "descrizione": "Scatena un inferno rovente che brucia gli avversari, infliggendo danni devastanti e riducendo la loro velocità.",
+          "danno": 0.7,
+          "tempo_ripetizione": 5200
+        }
+      ]
+    },
+    {
+      "id": "Jade",
+      "nome": "Jade, Lama Mortale",
+      "descrizione": "Jade è una maestra dell'arte marziale che affronta i nemici con la grazia di una tigre e la ferocia di un leone. La sua presenza è come un vortice di movimento e potenza, e il suo potere può sconfiggere gli avversari con la sua lama affilata come una luna crescente. Con la sua abilita nel combattimento, Jade può schivare i colpi e contrattaccare con precisione letale.",
+      "immagine": "jade.png",
+      "vita": 100,
+      "abilita": [
+        {
+          "azione": "Colpo Preciso",
+          "descrizione": "Scaglia un colpo preciso contro gli avversari, infliggendo danni critici e ignorando le loro difese.",
+          "danno": 30,
+          "tempo_ripetizione": 4500
+        },
+        {
+          "azione": "Finta Mortale",
+          "descrizione": "Esegue una finta mortale per confondere gli avversari e schivare i loro attacchi.",
+          "danno": 0,
+          "tempo_ripetizione": 4800
+        },
+        {
+          "azione": "Lama Sferzante",
+          "descrizione": "Scaglia la sua lama come un fulmine contro gli avversari, infliggendo danni multipli e causando sanguinamento.",
+          "danno": 27,
+          "tempo_ripetizione": 4300
+        },
+        {
+          "azione": "Furia della Tigre",
+          "descrizione": "Entra in uno stato di furia, aumentando la potenza dei suoi attacchi e infliggendo danni extra.",
+          "danno": 0.6,
+          "tempo_ripetizione": 5700
+        },
+        {
+          "azione": "Colpo Mortale",
+          "descrizione": "Scatena un colpo mortale che taglia attraverso le difese degli avversari e infligge danni devastanti.",
+          "danno": 0.7,
+          "tempo_ripetizione": 5200
         }
       ]
     }

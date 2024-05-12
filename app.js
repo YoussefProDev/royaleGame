@@ -10,7 +10,7 @@ const address = ip.address();
 const app = express();
 const server = createServer(app);
 app.use(express.json());
-
+import fs from "fs";
 const io = new Server(server, {
   cors: {
     origin: [
@@ -23,6 +23,17 @@ const io = new Server(server, {
 });
 
 app.use(express.static("public"));
+app.get("/dati", (req, res) => {
+  // Leggi il file JSON
+  fs.readFile("dati.json", "utf8", (err, data) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ error: "Errore nel recupero dei dati" });
+    }
+    const jsonData = JSON.parse(data);
+    res.json(jsonData);
+  });
+});
 // Route per la homepage
 app.get("/", (req, res) => {
   res.sendFile(`${path.resolve()}/public/index.html`);
@@ -50,10 +61,11 @@ function findOrCreateRoom() {
 // Evento di connessione al namespace "arena"
 let i = 0;
 io.on("connection", (socket) => {
-  socket.on("readyToPlay", (username) => {
+  socket.on("readyToPlay", (username, character) => {
     let players = [];
     socket.data = {
       username: username,
+      character: character,
     };
     if (i === 0) {
       setInterval(() => {
@@ -69,10 +81,20 @@ io.on("connection", (socket) => {
       const room = rooms.filter((ele) => (ele.id === roomId ? true : false))[0];
       let playersRoom = room.players;
       players = playersRoom;
-      playersRoom.push({ id: socket.id, username: socket.data.username });
+      playersRoom.push({
+        id: socket.id,
+        username: socket.data.username,
+        character: socket.data.character,
+      });
     } else {
       roomId = uuidv4();
-      players = [{ id: socket.id, username: socket.data.username }];
+      players = [
+        {
+          id: socket.id,
+          username: socket.data.username,
+          character: socket.data.character,
+        },
+      ];
       rooms.push({
         id: roomId,
         players: players,

@@ -55,77 +55,7 @@
     <div id="step2" class="step d-none">
       <div class="container">
         <h2 class="text-center p-5">Seleziona il tuo personaggio</h2>
-        <div class="row">
-          <div class="card col-3">
-            <img
-              src="https://media.brawltime.ninja/brawlers/jessie/model.png?size=400"
-              class="card-img-top"
-              alt="Jessie"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Jessie</h5>
-              <p class="card-text">
-                Jessie is a prodigy who builds guns and gadgets from parts she
-                finds in the junkyard. Maybe one day her mother Pam will see she
-                can fend for herself!
-              </p>
-              <button
-                class="btn btn-primary selectionChr"
-                data-id="1"
-                data-hp="10"
-                data-power="3"
-                data-speed="5"
-                data-name="Jessie"
-              >
-                Seleziona
-              </button>
-              <!-- Button trigger modal -->
-              <button
-                type="button"
-                class="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-              >
-                Info
-              </button>
-
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="exampleModal"
-                tabindex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="exampleModalLabel">
-                        Info utili
-                      </h1>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">Elenco info del personaggio</div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="personaggiContainer" class="row"></div>
       </div>
     </div>
     <div id="attesa" class="step d-none">Attesa</div>
@@ -202,40 +132,7 @@
           class="btn-group-vertical btn-absolute"
           role="group"
           aria-label="Vertical button group"
-        >
-          <button
-            type="button"
-            class="btn btn-outline-primary btn-lg"
-            id="pugno"
-            data-danno="10"
-          >
-            Pugno
-          </button>
-          <button
-            type="button"
-            class="btn btn-outline-primary btn-lg"
-            id="calcio"
-            data-danno="20"
-          >
-            Calcio
-          </button>
-          <button
-            type="button"
-            class="btn btn-outline-primary btn-lg"
-            id="schiva"
-            data-danno="5"
-          >
-            Schiva
-          </button>
-          <button
-            type="button"
-            class="btn btn-outline-primary btn-lg"
-            id="para"
-            data-danno="5"
-          >
-            Para
-          </button>
-        </div>
+        ></div>
         <div id="viewArea">
           <h1 id="attacco"></h1>
         </div>
