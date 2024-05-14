@@ -1,18 +1,31 @@
 console.log("Document ready");
 const socket = io();
 
-let selectedCharacter;
-let opponent;
-let lastAttack;
-const myName = document.getElementById("myName");
-const myLife = document.querySelector("#myBar");
-const opponentName = document.getElementById("opponentName");
-const opponentLife = document.querySelector("#opponentBar");
-usernameInput = document.querySelector("#usernameInput");
-
 usernameInput.value = localStorage.getItem("username");
 document.querySelector("#username").textContent = usernameInput.value;
 let username = "";
+document.querySelector("#submit").addEventListener("click", function () {
+  username = usernameInput.value;
+  localStorage.setItem("username", username);
+  document.querySelector("#step1").classList.add("d-none");
+  document.querySelector("#step2").classList.remove("d-none");
+  document.querySelector("#username").textContent = username;
+  renderCharacters();
+});
+
+let selectedCharacter;
+let opponent;
+let lastAttack = 25;
+let danno = false;
+const myName = document.getElementById("myName");
+const myLifeBar = document.querySelector("#myBar");
+const opponentName = document.getElementById("opponentName");
+const opponentLifeBar = document.querySelector("#opponentBar");
+let opponentLife, myLife;
+let attackDanno = false;
+let textView = document.querySelector("#attacco");
+let attaccoName;
+usernameInput = document.querySelector("#usernameInput");
 
 async function renderCharacters() {
   const response = await fetch("/dati");
@@ -27,10 +40,12 @@ async function renderCharacters() {
     const card = document.createElement("div");
     card.classList.add("card", "col-3");
 
-    // const image = document.createElement("img");
+    const image = document.createElement("img");
+    image.src =
+      "https://media.brawltime.ninja/brawlers/jessie/model.png?size=400";
     // image.src = `immagini/${character.immagine}`;
-    // image.classList.add("card-img-top");
-    // image.alt = character.nome;
+    image.classList.add("card-img-top");
+    image.alt = character.nome;
 
     const body = document.createElement("div");
     body.classList.add("card-body");
@@ -53,7 +68,7 @@ async function renderCharacters() {
         (ele) => ele.id == dataset.character
       );
       selectedCharacter = selectedCharacter[0];
-
+      myLife = selectedCharacter.vita;
       document.querySelector("#step2").classList.add("d-none");
       document.querySelector("#attesa").classList.remove("d-none");
       console.log("Connesso al server");
@@ -72,7 +87,7 @@ async function renderCharacters() {
     body.appendChild(selectButton);
     body.appendChild(infoButton);
 
-    // card.appendChild(image);
+    card.appendChild(image);
     card.appendChild(body);
 
     container.appendChild(card);
@@ -147,111 +162,127 @@ async function renderCharacters() {
   });
 }
 
-document.querySelector("#submit").addEventListener("click", function () {
-  username = usernameInput.value;
-  localStorage.setItem("username", username);
-  document.querySelector("#step1").classList.add("d-none");
-  document.querySelector("#step2").classList.remove("d-none");
-  document.querySelector("#username").textContent = username;
-  renderCharacters();
-});
-
 socket.on("startGame", (players) => {
   players.forEach((player) => {
     if (player.id != socket.id) {
       opponent = player;
+      opponentLife = opponent.character.vita;
       opponentName.textContent = player.username;
     }
   });
 
   myName.textContent = username;
-  myLife.style.width = `${selectedCharacter.vita}%`;
-  myLife.textContent = `${selectedCharacter.vita}%`;
-  opponentLife.style.width = `${opponent.character.vita}%`;
-  opponentLife.textContent = `${opponent.character.vita}%`;
+  myLifeBar.style.width = `${myLife}%`;
+  myLifeBar.textContent = `${myLife}%`;
+  opponentLifeBar.style.width = `${opponentLife}%`;
+  opponentLifeBar.textContent = `${opponentLife}%`;
 
   const actionContainer = document.getElementById("actions");
-  selectedCharacter.abilita.forEach((abilita) => {
-    let danno;
-    if (
-      parseFloat(abilita.danno) === abilita.danno &&
-      !Number.isInteger(abilita.danno)
-    ) {
-      if (lastAttack) {
-        danno = Math.ceil(abilita.danno * lastAttack);
-      } else {
-        const random = Math.random() * 20;
-
-        danno = Math.ceil(abilita.danno * random);
-      }
-    } else {
-      danno = abilita.danno;
-    }
+  selectedCharacter.abilita.forEach((ability) => {
     const abilityButton = document.createElement("button");
 
-    let interiorProgressTime = document.createElement("span");
-    interiorProgressTime.classList.add("progress-bar", "bg-primary");
-    interiorProgressTime.id = `time remained of ${abilita.azione}`;
-    interiorProgressTime.style.width = `0%`;
-    // let interiorProgressTimeStyle = getComputedStyle(interiorProgressTime);
-    // console.log(`${abilita.tempo_ripetizione}`);
-    interiorProgressTime.style.setProperty(
-      "--time",
-      `${abilita.tempo_ripetizione}ms`
-    );
-    const progressTime = document.createElement("span");
-    progressTime.classList.add("progress", "d-none");
-    progressTime.role = "progressbar";
-    progressTime.ariaLabel = "time Remained";
-    progressTime.ariaValueNow = "0";
-    progressTime.ariaValueMin = "0";
-    progressTime.ariaValueMax = "100";
-    progressTime.appendChild(interiorProgressTime);
     abilityButton.type = "button";
     abilityButton.classList.add("btn", "btn-outline-primary", "btn-lg");
-    abilityButton.id = abilita.azione;
-    abilityButton.textContent = abilita.azione;
-    abilityButton.appendChild(progressTime);
+    abilityButton.id = ability.azione;
+    abilityButton.textContent = `${ability.azione} con danno ${ability.danno}`;
 
     abilityButton.addEventListener("click", (event) => {
-      progressTime.classList.remove("d-none");
-      socket.emit(
-        "attack",
-        event.target.id,
-        parseInt(myLife.textContent),
-        danno
+      let abilit = selectedCharacter.abilita.filter(
+        (ele) => ele.azione === event.target.id
       );
-      interiorProgressTime.classList.add("timeAnimation");
-      // interiorProgressTime.style.width = "20%";
-      // ${abilita.tempo_ripetizione} linear 1
-      // const intStyle = interiorProgressTime.style;
-      // intStyle.animationName = `time`;
-      // intStyle.animationDuration = `${abilita.tempo_ripetizione}`;
-      // intStyle.animationTimingFunction = `linear`;
-      // intStyle.animationIterationCount = `1`;
-      // console.log(interiorProgressTime.style.animation);
-      event.target.disabled = true;
-      // setInterval(function () {
-      //   console.log(interiorProgressTime.style.width);
-      //   interiorProgressTime.style.width = `${
-      //     parseInt(interiorProgressTime.style.width) + 5
-      //   }%`;
+      abilit = abilit[0];
+      if (
+        parseFloat(abilit.danno) === abilit.danno &&
+        !Number.isInteger(abilit.danno)
+      ) {
+        danno = Math.ceil(abilit.danno * lastAttack);
+      } else {
+        danno = abilit.danno;
+      }
 
-      //   progressTime.ariaValueNow = `${myLife.textContent}`;
-      // }, 800);
+      // progressTime.classList.remove("d-none");
+      socket.emit("attack", event.target.id, parseInt(myLife), danno);
+
+      actionContainer.childNodes.forEach((button) => (button.disabled = true));
+
       setTimeout(() => {
-        interiorProgressTime.classList.remove("timeAnimation");
-        progressTime.classList.add("d-none");
-        event.target.disabled = false;
-        interiorProgressTime.style.animation = "";
-      }, abilita.tempo_ripetizione);
+        actionContainer.childNodes.forEach(
+          (button) => (button.disabled = false)
+        );
+      }, ability.tempo_ripetizione);
     });
     actionContainer.appendChild(abilityButton);
   });
 
   document.querySelector("#attesa").classList.add("d-none");
   document.querySelector("#step3").classList.remove("d-none");
+
+  setInterval(() => {
+    document.getElementById("time").classList.add("timeAnimation");
+  }, -3000);
+  const interval = setInterval(() => {
+    document.getElementById("time").classList.remove("timeAnimation");
+    let finalAttack;
+    if (attackDanno && danno) {
+      finalAttack = attackDanno - danno;
+
+      if (finalAttack < 0) {
+        textView.textContent = `hai vinto tu e l'avversario ti ha colpito ${attaccoName}`;
+
+        opponentLife = opponentLife + finalAttack;
+        opponentLifeBar.style.width = `${opponentLife}%`;
+        opponentLifeBar.textContent = `${opponentLife}%`;
+        opponentLifeBar.parentElement.ariaValueNow = `${opponentLife}`;
+
+        finalAttack = 0;
+      } else {
+        textView.textContent = `non eri abbastanza forte e l'avversario ti ha colpito ${attaccoName}`;
+      }
+    } else {
+      if (attackDanno) {
+        textView.textContent = `tu non hai attacato e l'avversario ti ha colpito ${attaccoName}`;
+        finalAttack = attackDanno;
+      } else {
+        if (danno) {
+          finalAttack = 0;
+          textView.textContent = `hai vinto tu perche l'avversario non ha attacato`;
+
+          opponentLife = opponentLife - danno;
+          opponentLifeBar.style.width = `${opponentLife}%`;
+          opponentLifeBar.textContent = `${opponentLife}%`;
+          opponentLifeBar.parentElement.ariaValueNow = `${opponentLife}`;
+        } else {
+          textView.textContent = "nessuno ha attacato";
+          finalAttack = 0;
+        }
+      }
+    }
+    myLife = myLife - finalAttack;
+    myLifeBar.style.width = `${myLife}%`;
+    myLifeBar.textContent = `${myLife}%`;
+    myLifeBar.parentElement.ariaValueNow = `${myLife}`;
+    if (myLife < 1) {
+      document.querySelector("#step3").classList.add("d-none");
+      document.querySelector("#fineText").textContent = `Hai Perso`;
+
+      document.querySelector("#fine").classList.remove("d-none");
+      socket.emit("perso");
+      clearInterval(interval);
+      setTimeout(() => {
+        location.reload();
+      }, 3000);
+    }
+    attackDanno = false;
+    danno = false;
+  }, 3000);
 });
+
+socket.on("recivedAttack", (attacco, life, attaccoDanno) => {
+  opponentLife = life;
+  attackDanno = attaccoDanno;
+  attaccoName = attacco;
+});
+
 socket.on("vinto", () => {
   console.log("Win");
   document.querySelector("#fineText").textContent = "Hai Vinto";
@@ -270,146 +301,3 @@ socket.on("opponentDisconnect", () => {
     location.reload();
   }, 5000);
 });
-
-socket.on("recivedAttack", (attacco, life, danno) => {
-  lastAttack = danno;
-  document.querySelector(
-    "#attacco"
-  ).textContent = `l'avversario ti ha colpito ${attacco}`;
-  myLife.style.width = `${parseInt(myLife.style.width) - +danno}%`;
-  myLife.textContent = `${parseInt(myLife.textContent) - +danno}%`;
-  myLife.parentElement.ariaValueNow = `${myLife.textContent}`;
-  opponentLife.style.width = `${life}%`;
-  opponentLife.textContent = `${life}%`;
-  opponentLife.parentElement.ariaValueNow = `${life}`;
-  if (parseInt(myLife.textContent) < 5) {
-    document.querySelector("#fineText").textContent = `Hai Perso`;
-    document.querySelector("#step3").classList.add("d-none");
-    document.querySelector("#fine").classList.remove("d-none");
-    socket.emit("perso");
-    setTimeout(() => {
-      location.reload();
-    }, 3000);
-  }
-});
-
-// document.querySelector("info").ad
-// const buttons = document.querySelectorAll("#actions button");
-// buttons.forEach((butt) => {
-//   butt.addEventListener("click", (event) => {
-//     let danno = event.target.dataset.danno;
-//     // console.log("danno", danno);
-//     switch (event.target.id) {
-//       case "pugno":
-//         event.target.disabled = true;
-//         setTimeout(() => {
-//           event.target.disabled = false;
-//         }, 1300);
-//         break;
-//       case "calcio":
-//         event.target.disabled = true;
-//         setTimeout(() => {
-//           event.target.disabled = false;
-//         }, 2500);
-//         break;
-//       case "schiva":
-//         myLife.style.width = `${parseInt(myLife.style.width) + 2}%`;
-//         myLife.textContent = `${parseInt(myLife.textContent) + 2}%`;
-//         danno = "0";
-//         event.target.disabled = true;
-//         setTimeout(() => {
-//           event.target.disabled = false;
-//         }, 500);
-//         break;
-
-//       case "para":
-//         danno = "0";
-//         // SelectedEnemy.hp -= SelectedCharacter.power;
-//         event.target.disabled = true;
-//         setTimeout(() => {
-//           event.target.disabled = false;
-//         }, 500);
-//         break;
-//     }
-
-//     // document.querySelector("#attacco").textContent = event.target.id;
-//     socket.emit("attack", event.target.id, parseInt(myLife.style.width), danno);
-//     opponentLife.style.width = `${
-//       parseInt(opponentLife.style.width) - +danno
-//     }%`;
-//     opponentLife.textContent = `${
-//       parseInt(opponentLife.textContent) - +danno
-//     }%`;
-//   });
-// });
-
-// function checkVictory(attacco) {
-//   if (game.actionP1 == "pugno") {
-//     switch (game.actionP2) {
-//       case "schiva":
-//         alert("pareggio");
-//         break;
-//       case "calcio":
-//         alert("pareggio");
-//         break;
-//       case "para":
-//         SelectedEnemy.hp -= SelectedCharacter.power;
-//         alert("vince p1");
-//         break;
-//     }
-//   }
-//   if (game.actionP1 == "schiva") {
-//     switch (game.actionP2) {
-//       case "pugno":
-//         alert("pareggio");
-//         break;
-//       case "calcio":
-//         SelectedCharacter.hp -= SelectedEnemy.speed;
-//         alert("vince p2");
-//         break;
-//       case "para":
-//         alert("pareggio");
-//         break;
-//     }
-//   }
-//   if (game.actionP1 == "calcio") {
-//     switch (game.actionP2) {
-//       case "schiva":
-//         SelectedEnemy.hp -= SelectedCharacter.speed;
-//         alert("vince p1");
-//         break;
-//       case "pugno":
-//         alert("pareggio");
-//         break;
-//       case "para":
-//         alert("pareggio");
-//         break;
-//     }
-//   }
-//   if (game.actionP1 == "para") {
-//     switch (game.actionP2) {
-//       case "schiva":
-//         alert("pareggio");
-//         break;
-//       case "pugno":
-//         SelectedCharacter.hp -= SelectedEnemy.power;
-//         alert("vince p2");
-//         break;
-//       case "calcio":
-//         alert("pareggio");
-//         break;
-//     }
-//   }
-//   console.log(SelectedCharacter);
-//   console.log(SelectedEnemy);
-//   if (game.actionP1 == game.actionP2) {
-//     alert("pareggio vince l'amicizia");
-//   }
-//   if (SelectedCharacter.hp <= 0) {
-//     alert("ha vinto p2");
-//     location.reload();
-//   } else if (SelectedEnemy.hp <= 0) {
-//     alert("ha vinto p1");
-//     location.reload();
-//   }
-// }

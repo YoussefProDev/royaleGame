@@ -62,15 +62,24 @@ header {
   width: 200px;
 }
 
+#viewArea {
+  width: 30vw;
+  margin: auto;
+}
+
 .timeAnimation {
-  animation: time var(--time) linear 1;
+  animation: time 3000ms linear infinite;
 }
 
 @keyframes time {
   0% {
-    width: 0%;
+    width: 100%;
+  }
+  75% {
+    background-color: red;
   }
   100% {
-    width: 100%;
+    background-color: red;
+    width: 0%;
   }
 }
