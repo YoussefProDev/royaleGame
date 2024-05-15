@@ -2,22 +2,22 @@ import express from "express";
 import { createServer } from "http";
 import { Server } from "socket.io";
 import path from "path";
-import ip from "ip";
+// import ip from "ip";
 import cors from "cors";
 import { v4 as uuidv4 } from "uuid";
-import { instrument } from "@socket.io/admin-ui";
-const address = ip.address();
+// const address = ip.address();
 const app = express();
 const server = createServer(app);
+app.use(
+  cors({
+    // origin: "http://youssefprodev.com",
+  })
+);
 app.use(express.json());
 import fs from "fs";
 const io = new Server(server, {
   cors: {
-    origin: [
-      `http://${address}:3000`,
-      `http://localhost:3000`,
-      "https://admin.socket.io",
-    ],
+    origin: [`http://localhost:3001`],
     credentials: true,
   },
 });
@@ -131,11 +131,7 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3000, () => {
-  console.log(`server running at http://${address}:3000`);
-});
-
-instrument(io, {
-  auth: false,
-  mode: "development",
+server.listen(3001, () => {
+  // console.log(`server running at http://${address}:3000`);
+  console.log(`server running at http://localhost:3001`);
 });
